@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <script>
+        // Function to dynamically show/hide fields based on selected checkboxes
+        function toggleFieldVisibility(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.style.display = field.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Update Student Information</h2>
+
+        <form action="{{ url_for('submit_update_student_marks') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="student_id">student_id</label>
+                <input type="text" class="form-control" id="student_id" name="student_id">
+            </div>
+            <div class="form-row">
+                <h4>Select fields to update:</h4>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="course_id_checkbox" onclick="toggleFieldVisibility('course_id_field')"> Course ID<br>
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="theory_marks_checkbox" onclick="toggleFieldVisibility('theory_marks_field')"> Theory Marks<br>
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="lab_marks_checkbox" onclick="toggleFieldVisibility('lab_marks_field')"> Lab Marks<br>
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="final_grade_checkbox" onclick="toggleFieldVisibility('final_grade_field')"> Final Grade<br>
+                </div>
+                
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="Semester_checkbox" onclick="toggleFieldVisibility('Semester_field')"> Semester<br>
+                </div>
+            </div>
+
+            <!-- Hidden fields to be updated -->
+            <div id="course_id_field" class="form-group" style="display:none;">
+                <label for="course_id">course_id</label>
+                <input type="text" class="form-control" id="course_id" name="course_id">
+            </div>
+
+            <div id="theory_marks_field" class="form-group" style="display:none;">
+                <label for="theory_marks">Theory Marks</label>
+                <input type="text" class="form-control" id="theory_marks" name="theory_marks">
+            </div>
+
+            <div id="lab_marks_field" class="form-group" style="display:none;">
+                <label for="lab_marks">Lab Marks</label>
+                <input type="text" class="form-control" id="lab_marks" name="lab_marks">
+            </div>
+
+            <div id="final_grade_field" class="form-group" style="display:none;">
+                <label for="final_grade">Final_grade</label>
+                <input type="text" class="form-control" id="final_grade" name="final_grade">
+            </div>
+
+            <div id="semester_field" class="form-group" style="display:none;">
+                <label for="semester">Semester</label>
+                <input type="text" class="form-control" id="semester" name="semester">
+            </div>
+ 
+            <button type="submit" class="btn btn-primary btn-block">Update Student</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

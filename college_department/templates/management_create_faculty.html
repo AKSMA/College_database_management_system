@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <script>
+        console.log('Faculty form script is running');
+      </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Create New Faculty</h2>
+        <form action="/handle_management_operation/create/faculty" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Faculty Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="email">Faculty Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="department_id">Department ID</label>
+                    <input type="text" class="form-control" id="department_id" name="department_id" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="graduation_course">Graduation Course</label>
+                    <input type="text" class="form-control" id="graduation_course" name="graduation_course" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="graduation_complete_year">Graduation Year</label>
+                    <input type="text" class="form-control" id="graduation_complete_year" name="graduation_complete_year" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="graduation_college">Graduation College</label>
+                    <input type="text" class="form-control" id="graduation_college" name="graduation_college" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="post_graduation_specialisation">PG Specialisation</label>
+                    <input type="text" class="form-control" id="post_graduation_specialisation" name="post_graduation_specialisation" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="post_graduation_complete_year">PG Completion Year</label>
+                    <input type="text" class="form-control" id="post_graduation_complete_year" name="post_graduation_complete_year" required>
+                </div>
+            </div>
+
+            <div class="form-group"></div>
+                <label for="post_graduation_college">Post Graduation College</label>
+                <input type="text" class="form-control" id="post_graduation_college" name="post_graduation_college" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phd_research">PhD Research</label>
+                    <input type="text" class="form-control" id="phd_research" name="phd_research" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="phd_complete_year">PhD Completion Year</label>
+                    <input type="text" class="form-control" id="phd_complete_year" name="phd_complete_year" required>
+                </div>
+            </div>
+            
+            <div class="form-group"></div>
+                <label for="phd_college">PhD College</label>
+                <input type="text" class="form-control" id="phd_college" name="phd_college" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="salary">Salary</label>
+                    <input type="number" class="form-control" id="salary" name="salary" required>
+                </div>
+
+                
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="course1">course 1 </label>
+                    <input type="number" class="form-control" id="course1" name="course1" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="course2">course 2</label>
+                    <input type="number" class="form-control" id="course2" name="course2" required>
+                </div>
+
+                
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="course">course 3 </label>
+                    <input type="number" class="form-control" id="course3" name="course3" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="salcourse">course 4</label>
+                    <input type="number" class="form-control" id="course4" name="course4" required>
+                </div>
+
+                
+            </div>
+
+    
+
+            <button type="submit" class="btn btn-primary btn-block">Create Faculty</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    
+</body>
+</html>

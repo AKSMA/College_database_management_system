@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Enter Faculty ID</h2>
+        <form action="/handle_management_operation/read/faculty" method="POST">
+            <div class="form-group">
+                <label for="faculty_id">Faculty ID</label>
+                <input type="number" class="form-control" id="faculty_id" name="faculty_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Fetch Faculty Data</button>
+        </form>
+    </div>
+</body>
+</html>

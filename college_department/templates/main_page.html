@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Main Page</title>
+    <!--====== Favicon Icon ======-->
+    <!-- Favicon -->
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+
+<!-- Slick CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+
+<!-- Animate CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+
+<!-- Nice Select CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nice-select.css') }}">
+
+<!-- Nice Number CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.nice-number.min.css') }}">
+
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+<!-- Default CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
+
+<!-- Main Style CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    
+</head>
+<body>
+    <!--====== PRELOADER PART START ======-->
+    
+    <div class="preloader">
+        <div class="loader rubix-cube">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3 color-1"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-5"></div>
+            <div class="layer layer-6"></div>
+            <div class="layer layer-7"></div>
+            <div class="layer layer-8"></div>
+        </div>
+    </div>
+
+    <header id="header-part">
+       
+        <div class="header-top d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header-contact text-lg-left text-center">
+                            <ul>
+                                <li><img src="{{url_for('static', filename='images/all-icon/map.png')}}" alt="icon"><span>Indian Institute of Information Technology, Nagpur</span></li>
+                                <li><img src="{{ url_for('static', filename='images/all-icon/email.png') }}" alt="icon"><span>iiitn.ac.in</span></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header-opening-time text-lg-right text-center">
+                            <p>Opening Hours : Monday to Saturay - 8 Am to 5 Pm</p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header top -->
+
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+                            <a href="https://iiitn.ac.in/">
+                                <img src="{{ url_for('static', filename='images/iiitn_logo.png') }}" alt="Logo" width='20%'>
+                                <!--<img src="logo.png" alt="Logo">-->
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="{{ url_for('static', filename='images/all-icon/support.png') }}" alt="icon">
+                                    <!--<img src="images/all-icon/support.png" alt="icon">-->
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>XXX XXX XXXX</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+
+        <div class="container text-center">
+            <h2>Welcome</h2>
+        </div>
+        
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="active" href="{{ url_for('main_page') }}">Home</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="{{ url_for('about') }}">About us</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="{{ url_for('courses') }}">Courses</a>
+                                        
+                                    </li>
+                                    
+                                    
+                                    <li class="nav-item">
+                                        <a href="{{ url_for('teachers') }}">Our teachers</a>
+                                        
+                                    </li>
+            
+                                    <li class="nav-item">
+                                        <a href="{{ url_for('teachers') }}">Contact</a>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                    
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 d-flex justify-content-center">
+                <div class="support-button mx-2">
+                    <div class="button">
+                        <a href="{{ url_for('login') }}" class="main-btn">Login</a>
+                    </div>
+                </div>
+                <div class="support-button mx-2">
+                    <div class="button">
+                        <a href="{{ url_for('register') }}" class="main-btn">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <br>
+    <section id="slider-part" class="slider-active">
+        <div class="single-slider bg_cover pt-150" style="background-image: url('{{ url_for('static', filename='images/iiitn.png') }}')" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">Inspiring Excellence in Data and Knowledge at IIITN</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">At IIITN, we don’t just manage data; we transform it into powerful insights.</p>
+                            <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="https://iiitn.ac.in/" target="_blank" rel="noopener noreferrer">Read More</a></li>
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{{ url_for('login') }}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+        
+        <div class="single-slider bg_cover pt-150" style="background-image: url('{{ url_for('static', filename='images/iiitn_2.jpg') }}')" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">Harnessing the Power of Data for Tomorrow’s Innovations</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">Building the future of innovation, one database at a time.</p>
+                            <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="https://iiitn.ac.in/" target="_blank" rel="noopener noreferrer">Read More</a></li>
+
+
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{{ url_for('login') }}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+        
+        <div class="single-slider bg_cover pt-150" style="background-image: url('{{ url_for('static', filename='images/iiitn_3.jpeg') }}')" data-overlay="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h1 data-animation="bounceInLeft" data-delay="1s">Mastering Data Management for a Smarter, Connected World</h1>
+                            <p data-animation="fadeInUp" data-delay="1.3s">Empowering minds at IIITN to navigate the world of data with precision and purpose.</p>
+                            <ul>
+                                <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="https://iiitn.ac.in/" target="_blank" rel="noopener noreferrer">Read More</a></li>
+                                <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="{{ url_for('login') }}">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- single slider -->
+    </section>
+        
+    
+
+   <!-- Vendor JS Files -->
+<script src="{{ url_for('static', filename='js/vendor/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+
+<!-- Bootstrap JS -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Slick JS -->
+<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+
+<!-- Magnific Popup JS -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+
+<!-- Counter Up JS -->
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+
+<!-- Nice Select JS -->
+<script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+
+<!-- Nice Number JS -->
+<script src="{{ url_for('static', filename='js/jquery.nice-number.min.js') }}"></script>
+
+<!-- Countdown JS -->
+<script src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+
+<!-- Validator JS -->
+<script src="{{ url_for('static', filename='js/validator.min.js') }}"></script>
+
+<!-- Ajax Contact JS -->
+<script src="{{ url_for('static', filename='js/ajax-contact.js') }}"></script>
+
+<!-- Main JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+<!-- Google Maps API & Map Script -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+<script src="{{ url_for('static', filename='js/map-script.js') }}"></script>
+
+
+</body>
+</html>

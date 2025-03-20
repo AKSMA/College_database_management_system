@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <script>
+        // Function to dynamically show/hide fields based on selected checkboxes
+        function toggleFieldVisibility(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.style.display = field.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Update Faculty Information</h2>
+
+        <form action="{{ url_for('submit_update_faculty') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="faculty_id">faculty_id</label>
+                <input type="text" class="form-control" id="faculty_id" name="faculty_id">
+            </div>
+            <div class="form-row">
+                <h4>Select fields to update:</h4>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="name_checkbox" onclick="toggleFieldVisibility('name_field')"> Name<br>
+                    <input type="checkbox" id="email_checkbox" onclick="toggleFieldVisibility('email_field')"> Email<br>
+                    <input type="checkbox" id="graduation_course_checkbox" onclick="toggleFieldVisibility('graduation_course_field')"> Graduation Course<br>
+                    <input type="checkbox" id="graduation_complete_year_checkbox" onclick="toggleFieldVisibility('graduation_complete_year_field')"> Graduation Year<br>
+                    <input type="checkbox" id="graduation_college_checkbox" onclick="toggleFieldVisibility('graduation_college_field')"> Graduation College<br>
+                    <input type="checkbox" id="post_graduation_specialisation_checkbox" onclick="toggleFieldVisibility('post_graduation_specialisation_field')"> PG Specialisation<br>
+                    <input type="checkbox" id="post_graduation_complete_year_checkbox" onclick="toggleFieldVisibility('post_graduation_complete_year_field')"> PG Completion Year<br>
+                    
+                </div>
+
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="phd_complete_year_checkbox" onclick="toggleFieldVisibility('phd_complete_year_field')"> PhD Completion Year<br>
+                    <input type="checkbox" id="post_graduation_college_checkbox" onclick="toggleFieldVisibility('post_graduation_college_field')"> PG College<br>
+                    <input type="checkbox" id="phd_college_checkbox" onclick="toggleFieldVisibility('phd_college_field')"> PhD College<br>
+                    <input type="checkbox" id="age_checkbox" onclick="toggleFieldVisibility('age_field')"> Age<br>
+                    <input type="checkbox" id="department_id_checkbox" onclick="toggleFieldVisibility('department_id_field')"> Department ID<br>
+                    <input type="checkbox" id="salary_checkbox" onclick="toggleFieldVisibility('salary_field')"> Salary<br>
+                </div>
+            </div>
+
+            <!-- Hidden fields to be updated -->
+            <div id="name_field" class="form-group" style="display:none;">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <div id="email_field" class="form-group" style="display:none;">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div id="graduation_course_field" class="form-group" style="display:none;">
+                <label for="graduation_course">Graduation Course</label>
+                <input type="text" class="form-control" id="graduation_course" name="graduation_course">
+            </div>
+
+            <div id="graduation_complete_year_field" class="form-group" style="display:none;">
+                <label for="graduation_complete_year">Graduation Year</label>
+                <input type="text" class="form-control" id="graduation_complete_year" name="graduation_complete_year">
+            </div>
+
+            <div id="graduation_college_field" class="form-group" style="display:none;">
+                <label for="graduation_college">Graduation College</label>
+                <input type="text" class="form-control" id="graduation_college" name="graduation_college">
+            </div>
+
+            <div id="post_graduation_specialisation_field" class="form-group" style="display:none;">
+                <label for="post_graduation_specialisation">PG Specialisation</label>
+                <input type="text" class="form-control" id="post_graduation_specialisation" name="post_graduation_specialisation">
+            </div>
+
+            <div id="post_graduation_complete_year_field" class="form-group" style="display:none;">
+                <label for="post_graduation_complete_year">PG Completion Year</label>
+                <input type="text" class="form-control" id="post_graduation_complete_year" name="post_graduation_complete_year">
+            </div>
+
+            <div id="phd_research_field" class="form-group" style="display:none;">
+                <label for="phd_research">PhD Research</label>
+                <input type="text" class="form-control" id="phd_research" name="phd_research">
+            </div>
+
+            <div id="phd_complete_year_field" class="form-group" style="display:none;">
+                <label for="phd_complete_year">PhD Completion Year</label>
+                <input type="text" class="form-control" id="phd_complete_year" name="phd_complete_year">
+            </div>
+
+            <div id="post_graduation_college_field" class="form-group" style="display:none;">
+                <label for="post_graduation_college">PG College</label>
+                <input type="text" class="form-control" id="post_graduation_college" name="post_graduation_college">
+            </div>
+
+            <div id="phd_college_field" class="form-group" style="display:none;">
+                <label for="phd_college">PhD College</label>
+                <input type="text" class="form-control" id="phd_college" name="phd_college">
+            </div>
+
+            <div id="age_field" class="form-group" style="display:none;">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" name="age">
+            </div>
+
+            <div id="department_id_field" class="form-group" style="display:none;">
+                <label for="department_id">Department ID</label>
+                <input type="text" class="form-control" id="department_id" name="department_id">
+            </div>
+
+            <div id="salary_field" class="form-group" style="display:none;">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" id="salary" name="salary">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Update Faculty</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

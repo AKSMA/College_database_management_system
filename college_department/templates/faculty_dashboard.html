@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- College Name at the Top -->
+    <header class="text-center py-3 bg-primary text-white">
+        <h1>Indian Institute of Information Technology, Nagpur</h1>
+    </header>
+
+    <!-- Sliding Photos Section (Bootstrap Carousel) centered and half-width -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6"> <!-- Set column width to half of the screen (6 out of 12 columns) -->
+                <div id="collegeCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ url_for('static', filename='images/iiitn.png') }}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ url_for('static', filename='images/iiitn_2.jpg') }}" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ url_for('static', filename='images/iiitn_3.jpeg') }}" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#collegeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#collegeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Details Section -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2>Welcome, {{ faculty.name }}!</h2>
+                <p>Branch: {{ faculty.department_id }}</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Faculty Table Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Faculty Details</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ faculty.faculty_id }}</td>
+                        <td>{{ faculty.email }}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Faculty Table Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Graduation details</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Graduation Course</th>
+                        <th>Graduation College</th>
+                        <th>Graduation Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ faculty.graduation_course }}</td>
+                        <td>{{ faculty.graduation_college }}</td>
+                        <td>{{ faculty.graduation_complete_year }}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Faculty Table Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Post Graduation details</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Post Graduation Course</th>
+                        <th>Post Graduation College</th>
+                        <th>Post Graduation Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ faculty.post_graduation_specialisation }}</td>
+                        <td>{{ faculty.post_graduation_college }}</td>
+                        <td>{{ faculty.post_graduation_complete_year }}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mt-5"></div>
+        <h2 class="text-center mb-4">Research details</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>PhD Research Area</th>
+                        <th>PhD College</th>
+                        <th>PhD Complete Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ faculty.phd_research }}</td>
+                        <td>{{ faculty.phd_college}}</td>
+                        <td>{{ faculty.phd_complete_year }}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mt-5"></div>
+        <h2 class="text-center mb-4">Courses Taught</h2>
+        <div class="table-responsive" style="max-height: 200px; overflow-y: auto;">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Course Id</th>
+                        <th>Course Name</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in course_taught %}
+                    <tr>
+                        <td>{{course.course_id }}</td>
+                        <td>{{course.course_name}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container mt-5"></div>
+        <h2 class="text-center mb-4">Salary Details</h2>
+        <div class="table-responsive" style="max-height: 200px; overflow-y: auto;">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Faculty Salary</th>
+                        <th>Avg Salary of faculty in the department with equal Experience</th>
+                        <th>Max Salary in the department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{salary_data_['total_salary_']}}</td>
+                        <td>{{salary_data_['avg_salary_']}}</td>
+                        <td>{{salary_data_['max_salary_']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Bootstrap JS and jQuery (necessary for the carousel) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <script>
+        console.log('Student form script is running');
+      </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Create New Student</h2>
+        <form action="/management_create_profile_student" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="email">Student Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="branch">branch</label>
+                    <select name="branch" id="branch" class="form-control" required>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Electronics and Communication">Electronics and Communication</option>
+                        <option value="Basic Sciences">Basic Sciences</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="year_of_joining">Year of Joining</label>
+                    <input type="text" class="form-control" id="year_of_joining" name="year_of_joining" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="semester">semester</label>
+                    <input type="text" class="form-control" id="semester" name="semester" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create Student Profile </button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    
+</body>
+</html>

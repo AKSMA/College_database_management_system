@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Faculty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <script>
+        // Function to dynamically show/hide fields based on selected checkboxes
+        function toggleFieldVisibility(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.style.display = field.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Update Student Information</h2>
+
+        <form action="{{ url_for('submit_update_student_profile') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <label for="student_id">student_id</label>
+                <input type="text" class="form-control" id="student_id" name="student_id">
+            </div>
+            <div class="form-row">
+                <h4>Select fields to update:</h4>
+                <div class="form-group col-md-12">
+                    <input type="checkbox" id="name_checkbox" onclick="toggleFieldVisibility('name_field')"> Name<br>
+                    <input type="checkbox" id="email_checkbox" onclick="toggleFieldVisibility('email_field')"> Email<br>
+                    <input type="checkbox" id="branch_checkbox" onclick="toggleFieldVisibility('branch_field')"> Branch<br>
+                    <input type="checkbox" id="year_of_joining_checkbox" onclick="toggleFieldVisibility('year_of_joining_field')"> Year Of Joining<br>
+                    <input type="checkbox" id="semester_checkbox" onclick="toggleFieldVisibility('semester_field')"> semester<br>
+                </div>
+
+            
+            </div>
+
+            <!-- Hidden fields to be updated -->
+            <div id="name_field" class="form-group" style="display:none;">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <div id="email_field" class="form-group" style="display:none;">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+
+            <div id="branch_field" class="form-group" style="display:none;">
+                <label for="branch">Branch</label>
+                <input type="text" class="form-control" id="branch" name="branch">
+            </div>
+
+            <div id="year_of_joining_field" class="form-group" style="display:none;">
+                <label for="year_of_joining">Year of Joining</label>
+                <input type="text" class="form-control" id="year_of_joining" name="year_of_joining">
+            </div>
+
+            <div id="semester_field" class="form-group" style="display:none;">
+                <label for="semester">Semester</label>
+                <input type="text" class="form-control" id="semester" name="semester">
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary btn-block">Update Student</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

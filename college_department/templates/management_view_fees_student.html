@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- College Name at the Top -->
+    <header class="text-center py-3 bg-primary text-white">
+        <h1>Indian Institute of Information Technology, Nagpur</h1>
+    </header>
+    
+
+    <div class="container mt-5"></div>
+        <h2 class="text-center mb-4">Fees Details</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Total Fees</th>
+                        <th>Fees paid</th>
+                        <th>Remaining Fees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>{{ fees[0]['total_fees'] }}</td>
+                        <td>{{ fees[0]['fees_paid'] }}</td>
+                        <td>{{ fees[0]['remaining_fees'] }}</td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+
+    
+
+    <!-- Bootstrap JS and jQuery (necessary for the carousel) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
